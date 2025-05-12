@@ -10,11 +10,11 @@ Set objConfig = Server.CreateObject("CDO.Configuration")
 ' Configuração SMTP autenticada
 With objConfig.Fields
     .Item("http://schemas.microsoft.com/cdo/configuration/sendusing") = 2 ' cdoSendUsingPort
-    .Item("http://schemas.microsoft.com/cdo/configuration/smtpserver") = "email-ssl.com.br"
+    .Item("http://schemas.microsoft.com/cdo/configuration/smtpserver") = "DIGITE O SERVIDOR SMTP"
     .Item("http://schemas.microsoft.com/cdo/configuration/smtpserverport") = 465
     .Item("http://schemas.microsoft.com/cdo/configuration/smtpauthenticate") = 1 ' cdoBasic
-    .Item("http://schemas.microsoft.com/cdo/configuration/sendusername") = "admin@macedoff.com.br"
-    .Item("http://schemas.microsoft.com/cdo/configuration/sendpassword") = "Teste@30303030"
+    .Item("http://schemas.microsoft.com/cdo/configuration/sendusername") = "DIGITE EMAIL REMETENTE"
+    .Item("http://schemas.microsoft.com/cdo/configuration/sendpassword") = "SENHA DO EMAIL"
     .Item("http://schemas.microsoft.com/cdo/configuration/smtpusessl") = True
     .Update
 End With
@@ -23,8 +23,8 @@ Set objMail.Configuration = objConfig
 
 ' Criar o e-mail
 With objMail
-    .From = "admin@macedoff.com.br"
-    .To = "suportelocaweb09@gmail.com"
+    .From = "EMAIL DO REMETENTE"
+    .To = "EMAIL DO DESTINATARIO"
     .Subject = "Formulário de Contato"
     .HTMLBody = "<b>Nome:</b> " & nome & "<br>" & _
                 "<b>Email:</b> " & email & "<br>" & _
